@@ -14,12 +14,14 @@ btn.addEventListener('click', function(){
         message: message.value,
         username:username.value
     })
+    message.value='';
     console.log(username.value, message.value);
 });
 
 
 //Mensaje cuando un usuario este escribiendo
 message.addEventListener('keypress', function(){
+    
     socket.emit('chat:typing', username.value)
 })
 
